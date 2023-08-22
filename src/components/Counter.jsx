@@ -1,15 +1,20 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { decrement, increment, incrementByValue } from "../redux/features/counter/counterSlice";
 
 function Counter() {
-    const count = useSelector((state) => state.counter.count)
+    const { count } = useSelector((state) => state.counter)
+    const dispatch = useDispatch()
     console.log(count);
+
     return (
         <div className="text-center">
-            <button className="btn brightness-0">increment</button>
+            <button onClick={() => dispatch(increment())} className="btn brightness-0">increment</button>
+            <br />
+            <button onClick={() => dispatch(incrementByValue(3))} className="btn brightness-0">increment by value</button>
             <div>
-                <h1>0</h1>
+                <h1>{count}</h1>
             </div>
-            <button className="btn brightness-0">decrement</button>
+            <button onClick={() => dispatch(decrement())} className="btn brightness-0">decrement</button>
         </div>
     );
 }

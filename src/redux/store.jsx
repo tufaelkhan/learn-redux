@@ -1,10 +1,5 @@
+import { configureStore } from "@reduxjs/toolkit";
 
-function store() {
-    return (
-        <div>
-            
-        </div>
-    );
-}
-
-export default store;
+export default store = configureStore({
+    reducer: {}
+})

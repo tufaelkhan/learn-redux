@@ -10,7 +10,7 @@ function Counter() {
         <div className="text-center">
             <button onClick={() => dispatch(increment())} className="btn brightness-0">increment</button>
             <br />
-            <button onClick={() => dispatch(incrementByValue(3))} className="btn brightness-0">increment by value</button>
+            <button onClick={() => dispatch(incrementByValue(9))} className="btn brightness-0">increment by value</button>
             <div>
                 <h1>{count}</h1>
             </div>
